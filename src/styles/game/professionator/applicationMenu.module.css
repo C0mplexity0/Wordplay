@@ -1,0 +1,136 @@
+.application-menu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.email-menu {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: var(--outer-border-radius);
+
+    padding: 0px;
+
+    overflow: hidden;
+}
+
+.email-send-menu {
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+.email-box-header {
+    background-color: rgb(26, 69, 209);
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+}
+
+.email-box-header h3 {
+    margin: 0px;
+    line-height: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.email-from,
+.email-to {
+    width: 100%;
+    height: 30px;
+    border-bottom: solid 1px rgb(235, 235, 235);
+    background-color: white;
+}
+
+.email-from span,
+.email-to span {
+    display: inline-block;
+    color: rgb(66, 66, 66);
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.email-content {
+    font-family: "Lato", sans-serif;
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 31px - 31px - 16px - 51px);
+    resize: none;
+    color: rgb(46, 46, 46);
+
+    margin: 0;
+
+    background-color: white;
+
+    vertical-align: top;
+}
+
+.email-controls {
+    width: 100%;
+    height: 50px;
+    border-top: solid 1px rgb(235, 235, 235);
+
+    position: relative;
+
+    margin: 0;
+
+    background-color: white;
+}
+
+.email-send-button {
+    padding: 10px 20px;
+    background-color: rgb(26, 69, 209);
+    border: none;
+    color: white;
+    font-family: "Lato", sans-serif;
+    border-radius: 9999px;
+    cursor: pointer;
+
+    margin: 0;
+
+    position: absolute;
+    top: 7px;
+    right: 7px;
+}
+
+.email-send-button[disabled] {
+    background-color: rgb(140, 158, 218);
+}
+
+.email-send-button:hover:not([disabled]) {
+    background-color: rgb(69, 109, 241);
+}
+
+.email-word-count {
+    color: rgb(66, 66, 66);
+    height: 50px;
+    line-height: 50px;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.email-sent-menu {
+    width: 100%;
+    height: calc(100% - 40px);
+    background-color: white;
+    color: black;
+    text-align: center;
+    position: relative;
+}
+
+.email-sent-menu-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

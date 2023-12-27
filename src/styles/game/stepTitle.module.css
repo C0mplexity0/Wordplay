@@ -1,0 +1,53 @@
+.step-title-container {
+    width: 100%;
+    height: 60px;
+}
+
+.step-title {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+
+    position: fixed;
+    top: 20px;
+    left: 100px;
+}
+
+.animated-step-title {
+    animation-name: step-title;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes step-title {
+    0% {
+        position: fixed;
+        top: 50%;
+        left: calc(50% + 40px);
+        transform: translate(-50%, -50%);
+        font-size: 0px;
+    }
+
+    25% {
+        position: fixed;
+        top: 50%;
+        left: calc(50% + 40px);
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+    }
+
+    75% {
+        position: fixed;
+        top: 50%;
+        left: calc(50% + 40px);
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+    }
+
+    100% {
+        top: 20px;
+        left: 100px;
+        transform: translate(0, 0);
+        font-size: 50px;
+    }
+}

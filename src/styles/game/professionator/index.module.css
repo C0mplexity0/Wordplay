@@ -1,0 +1,29 @@
+.menu {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.notification-box {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.notification {
+    padding: 10px;
+    border-radius: var(--outer-border-radius);
+    background-color: var(--primary);
+
+    color: var(--text);
+
+    margin: 10px;
+}
+
+.notification-good {
+    background-color: var(--good);
+}
+
+.notification-bad {
+    background-color: var(--bad);
+}

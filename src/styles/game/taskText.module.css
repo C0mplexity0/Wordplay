@@ -1,0 +1,23 @@
+.task-text {
+    animation: task-text-animation;
+    animation-delay: 2s;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+
+    font-size: 16px;
+
+    margin-left: 80px;
+
+    text-align: left;
+
+    opacity: 0;
+}
+
+@keyframes task-text-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

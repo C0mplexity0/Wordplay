@@ -1,0 +1,31 @@
+.task-body {
+    width: calc(100% - 40px);
+    height: calc(100% - 128px - 60px);
+
+    max-width: 1000px;
+
+    margin: 20px;
+    margin-left: 50%;
+
+    transform: translateX(-50%);
+
+    position: relative;
+
+    display: block;
+
+    opacity: 0;
+
+    animation-name: task-body-animation;
+    animation-delay: 2s;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes task-body-animation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

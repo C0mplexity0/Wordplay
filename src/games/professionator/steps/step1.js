@@ -47,7 +47,7 @@ export default class ProfessionatorStep1 {
         if (!allAnswered) {
             this.professionator.setCurrentMenu("applicationStepTimeUpScreen");
             
-            var professionator = this.professionator;
+            const professionator = this.professionator;
             var currentGameId = professionator.currentGame.id;
 
             setTimeout(() => {

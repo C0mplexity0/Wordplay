@@ -1,3 +1,10 @@
+.page-container {
+    background: rgb(133,204,255);
+    background: linear-gradient(149deg, rgba(133,204,255,1) 0%, rgba(73,118,254,1) 100%); 
+    width: 100%;
+    height: 100%;
+  }
+
 .menu {
     width: 100%;
     height: 100%;

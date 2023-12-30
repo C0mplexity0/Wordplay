@@ -1,12 +1,14 @@
 import Head from "next/head";
 import styles from "@/styles/game/professionator/index.module.css";
 import { useEffect, useRef, useState } from "react";
-import { PregameMenu, PregameMenuPlayerSection } from "../../../../component/game/pregameMenu";
+import { PregameMenu, PregameMenuPlayerSection } from "@/component/game/pregameMenu";
 
 import io from "socket.io-client";
-import { ApplicationMenu } from "../../../../component/game/professionator/applicationMenu";
-import BeginScreen from "../../../../component/game/beginScreen";
-import ViewApplicationsMenu from "../../../../component/game/professionator/viewApplicationsMenu";
+import { ApplicationMenu } from "@/component/game/professionator/applicationMenu";
+import BeginScreen from "@/component/game/beginScreen";
+import ViewApplicationsMenu from "@/component/game/professionator/viewApplicationsMenu";
+import BackgroundIcons from "@/component/backgroundIcons";
+import ApplicationMenuTimeUpScreen from "@/component/game/professionator/applicationStepTimeUpScreen";
 
 var notifications, setNotifications;
 
@@ -30,6 +32,7 @@ const refs = {
     "pregameMenu": null,
     "beginScreen": null,
     "applicationMenu": null,
+    "applicationStepTimeUpScreen": null,
     "viewApplicationsMenu": null
 };
 
@@ -62,11 +65,12 @@ export default function Professionator() {
     }, []);
 
     return (
-        <>
+        <div className={styles["page-container"]}>
             <Head>
                 <title>Professionator</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <BackgroundIcons />
             <main className={`${styles.main} theme-playful`}>
                 <div ref={refs.pregameMenu} className={styles["menu"]}>
                     <PregameMenu gameName="Professionator" timer={currentTimerValue}>
@@ -81,6 +85,10 @@ export default function Professionator() {
                 <div ref={refs.applicationMenu} className={styles["menu"]}>
                     <ApplicationMenu tickingAudio={tickingAudio} ringingAudio={ringingAudio} player={clientPlayer} time={currentTimerValue} socket={useStateSocket} />
                 </div>
+
+                <div ref={refs.applicationStepTimeUpScreen} className={styles["menu"]}>
+                    <ApplicationMenuTimeUpScreen tickingAudio={tickingAudio} ringingAudio={ringingAudio} time={currentTimerValue} />
+                </div>
                 
                 <div ref={refs.viewApplicationsMenu} className={styles["menu"]}>
                     <ViewApplicationsMenu tickingAudio={tickingAudio} ringingAudio={ringingAudio} currentViewingPlayer={currentViewingPlayer} time={currentTimerValue} socket={useStateSocket} />
@@ -93,7 +101,7 @@ export default function Professionator() {
                 <audio ref={tickingAudio} src="/audio/game/ticking.mp3" />
                 <audio ref={ringingAudio} src="/audio/game/ringing.mp3" />
             </main>
-        </>
+        </div>
     )
 }
 
@@ -176,10 +184,12 @@ function setCurrentMenu(menu) {
     currentMenu = menu;
 
     for (var ref in refs) {
-        if (ref !== menu) {
-            refs[ref].current.style.display = "none";
-        } else {
-            refs[ref].current.style.display = "block";
+        if (refs[ref].current != null) {
+            if (ref !== menu) {
+                refs[ref].current.style.display = "none";
+            } else {
+                refs[ref].current.style.display = "block";
+            }
         }
     }
 }

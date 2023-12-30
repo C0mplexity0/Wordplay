@@ -1,0 +1,29 @@
+.popup-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: fit-content;
+    height: fit-content;
+    transform: translate(-50%, -50%);
+
+    animation-name: popup-container-appear;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+@keyframes popup-container-appear {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.popup-container h1 {
+    margin-left: 80px;
+    width: fit-content;
+    display: inline-block;
+    white-space: nowrap;
+}
